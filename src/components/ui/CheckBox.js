@@ -1,3 +1,4 @@
+
 import React, {Component} from 'react';
 
 class CheckBox extends Component {
@@ -10,6 +11,15 @@ class CheckBox extends Component {
 
     handleChange(e) {
         const {checked} = e.target;
+        if (checked) {
+            const confirmComplete = window.confirm(' mark this task as completed?');
+            if (!confirmComplete) {
+                
+                e.target.checked = this.state.checked;
+                return;
+            }
+        }
+
 
         this.setState({checked});
         this.props.onChange(checked);
@@ -21,3 +31,4 @@ class CheckBox extends Component {
 }
 
 export default CheckBox;
+
