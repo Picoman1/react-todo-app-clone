@@ -32,7 +32,7 @@ export default function TodoItem(props) {
                 type="date" 
                 value={data.dueDate || ''} 
                 onChange={handleDueDateChange} 
-                className="due-date-selector" 
+                 
             />
         </li>
     );
